@@ -7,17 +7,17 @@
 
 template<typename T> void resetgrid(T& grid)
 {
-	for(auto& col:grid)
-		for(auto& cell:col)
+	for(auto& row:grid)
+		for(auto& cell:row)
 			cell=0;
 }
 
 template<typename T> void showgrid(const T& grid)
 {
 	std::cout<<' ';
-	for(int i=1;i<=grid[0].size();i++) std::cout<<i;
+	for(int i=1;i<=grid[0].size();++i) std::cout<<i;
 	std::cout<<std::endl;
-	for(int i=0;i<grid.size();i++){
+	for(int i=0;i<grid.size();++i){
 		std::cout<<i+1;
 		for(const auto& cell:grid[i])
 			std::cout<<(cell==0?' ':cell==1?'O':'X');
